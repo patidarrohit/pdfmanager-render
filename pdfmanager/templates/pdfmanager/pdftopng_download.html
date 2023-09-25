@@ -1,0 +1,27 @@
+{% extends "pdfmanager/base.html"%}
+{% load static %}
+{% block content %}
+<section class="p-5">
+    <div class="container">
+      <div class="row text-center g-4">
+        <div class="col-md">
+          <div class="card bg-dark text-light mx-auto" id="card-merge">
+            <div class="card-body text-center">
+              <div class="h1 mb-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-file-earmark-image" viewBox="0 0 16 16">
+                    <path d="M6.502 7a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
+                    <path d="M14 14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5L14 4.5V14zM4 1a1 1 0 0 0-1 1v10l2.224-2.224a.5.5 0 0 1 .61-.075L8 11l2.157-3.02a.5.5 0 0 1 .76-.063L13 10V4.5h-2A1.5 1.5 0 0 1 9.5 3V1H4z"/>
+                </svg>
+              </div>
+              <h3 class="card-title mb-3">PDF to PNG</h3>
+              <p class="card-text">
+                File conversion is completed. Please use below link to download your PNG file.
+              </p>
+              <a href="{{fileurl}}" download>Download PNG</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>    
+{% endblock content %}

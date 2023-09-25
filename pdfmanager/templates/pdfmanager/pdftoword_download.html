@@ -1,0 +1,27 @@
+{% extends "pdfmanager/base.html"%}
+{% load static %}
+{% block content %}
+<section class="p-5">
+    <div class="container">
+      <div class="row text-center g-4">
+        <div class="col-md">
+          <div class="card bg-dark text-light mx-auto" id="card-merge">
+            <div class="card-body text-center">
+              <div class="h1 mb-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-file-earmark-word" viewBox="0 0 16 16">
+                    <path d="M5.485 6.879a.5.5 0 1 0-.97.242l1.5 6a.5.5 0 0 0 .967.01L8 9.402l1.018 3.73a.5.5 0 0 0 .967-.01l1.5-6a.5.5 0 0 0-.97-.242l-1.036 4.144-.997-3.655a.5.5 0 0 0-.964 0l-.997 3.655L5.485 6.88z"/>
+                    <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/>
+                </svg>
+              </div>
+              <h3 class="card-title mb-3">PDF to WORD</h3>
+              <p class="card-text">
+                Conversion operation is completed. Please use below link to download your Word document file.
+              </p>
+              <a href="{{fileurl}}" download>Download File</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>    
+{% endblock content %}

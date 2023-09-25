@@ -1,0 +1,96 @@
+{% load static %}
+<!--Nav Bar-->
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 fixed-top">
+    <div class="container">
+      <a href="{% url 'home' %}" class="pull-left"><img src="{% static 'images/square_logo.png' %} " style="width:60px"></a> 
+      <a href="{% url 'home' %}" class="navbar-brand px-3">PDF Wala</a>
+      <!-- <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+          <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
+        </a> -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navmenu">
+          <ul class="navbar-nav ms-auto px-5">
+            <li class="nav-item">
+              <a href="{% url 'home' %}" {% if '/' == request.path %} class="nav-link text-white" {% else %} class="nav-link" {% endif %}>Home</a>
+            </li>
+            <li class="nav-item dropdown submenu">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Services
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="{% url 'pdfmerge' %}">PDF Merge</a></li>
+                <li><a class="dropdown-item" href="{% url 'pdfsplit' %}">PDF Split</a></li>
+                <li><a class="dropdown-item" href="{% url 'pdfrotate' %}">PDF Rotate</a></li>
+                <li><a class="dropdown-item" href="{% url 'pdfextract' %}">PDF Extract</a></li>
+                <li><a class="dropdown-item" href="{% url 'pdfwatermark' %}">PDF Watermark</a></li>
+                <li><a class="dropdown-item" href="{% url 'pdfinfo' %}">PDF Info</a></li>
+                <li><hr class="dropdown-divider text-light"></li>
+                <li>
+                  <a href="{% url 'convertfrompdf' %}" class="dropdown-item submenu-dtl">Convert from PDF  &#x27A4;</a>
+                  <ul class="dropdown-menu dropdown-submenu dropdown-menu-dark">
+                    <li>
+                      <a href="{% url 'pdftojpg' %}" class="dropdown-item">PDF to JPG</a>
+                    </li>
+                    <li>
+                      <a href="{% url 'pdftopng' %}" class="dropdown-item">PDF to PNG</a>
+                    </li>
+                    <li>
+                      <a href="{% url 'pdftoword' %}" class="dropdown-item">PDF to WORD</a>
+                    </li>
+                  </ul>
+                </li>  
+                <li>
+                  <a href="{% url 'converttopdf' %}" class="dropdown-item submenu-dtl">Convert to PDF  &#x27A4;</a>
+                  <ul class="dropdown-menu dropdown-submenu dropdown-menu-dark">
+                    <li>
+                      <a href="{% url 'jpgtopdf' %}" class="dropdown-item">JPG to PDF</a>
+                    </li>
+                    <li>
+                      <a href="{% url 'pngtopdf' %}" class="dropdown-item">PNG to PDF</a>
+                    </li>
+                    <li>
+                      <a href="{% url 'wordtopdf' %}" class="dropdown-item">WORD to PDF</a>
+                    </li>
+                  </ul>
+                </li>              
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a href="#FAQs" class="nav-link">FAQs</a>
+            </li>
+            <li class="nav-item">
+              <a href="{% url 'about' %}" {% if '/about/' == request.path %} class="nav-link text-white" {% else %} class="nav-link" {% endif %}>About</a>
+            </li>
+            <!-- <li class="nav-item">
+              <div class="nav-item">
+                <button type="button" class="btn btn-outline-light me-2">Login</button>
+                <button type="button" class="btn btn-warning">Sign-up</button>
+              </div>
+            </li> -->
+          </ul>
+
+        <!-- </div>
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          <li><a href="{% url 'home' %}" {% if '/' == request.path %} class="nav-link px-2 text-secondary" {% else %} class="nav-link px-2 text-white" {% endif %}>Home</a></li>
+          <li><a href="#" class="nav-link px-2 text-white">Features</a></li>
+          <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li> 
+          <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
+          <li><a href="{% url 'about' %}" {% if 'about' in request.path %} class="nav-link px-2 text-secondary" {% else %} class="nav-link px-2 text-white" {% endif %}>About</a></li>
+        </ul>
+
+        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+          <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
+        </form>  -->
+
+        <div class="nav-item">
+          <!-- <button type="button" class="btn btn-outline-light me-2">Login</button>
+          <button type="button" class="btn btn-warning">Sign-up</button> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

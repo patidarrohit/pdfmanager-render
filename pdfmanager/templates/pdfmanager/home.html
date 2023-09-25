@@ -1,0 +1,162 @@
+{% extends "pdfmanager/base.html"%}
+{% load static %}
+{% block content %}
+<section class="py-2">
+    <div class="container">
+      <div class="row text-center mx-auto g-4 m-4">
+        <div class="col-lg-4 col-md-6 col-sm">
+          <div class="card bg-dark text-light mx-auto my-2">
+            <div class="card-body text-center">
+              <div class="h1 mb-3">
+                <i class="bi bi-intersect"></i>
+              </div>
+              <h3 class="card-title mb-3">PDF Merge</h3>
+              <p class="card-text">
+                Do you want to merge multiple pdf files into one? 
+              </p>
+              <a href="{% url 'pdfmerge' %}" class="btn btn-warning my-3">Lets merge it!</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm mx-auto">
+          <div class="card bg-secondary text-light mx-auto my-2">
+            <div class="card-body text-center">
+              <div class="h1 mb-3">
+                <i class="bi bi-file-earmark-break"></i>
+              </div>
+              <h3 class="card-title mb-3">PDF Split</h3>
+              <p class="card-text">
+                Split PDF file into multiple pdfs
+              </p>
+              <a href="{% url 'pdfsplit' %}" class="btn btn-warning my-3">Click for split!</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm mx-auto">
+          <div class="card bg-dark text-light mx-auto my-2">
+            <div class="card-body text-center">
+              <div class="h1 mb-3">
+                <i class="bi bi-arrow-clockwise"></i>
+              </div>
+              <h3 class="card-title mb-3">PDF Rotate</h3>
+              <p class="card-text">
+                Do you want to rotate any page in your pdf?
+              </p>
+              <a href="{% url 'pdfrotate' %}" class="btn btn-warning my-3">Rotate Here!</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm mx-auto">
+          <div class="card bg-dark text-light mx-auto my-2">
+            <div class="card-body text-center">
+              <div class="h1 mb-3">
+                <i class="bi bi-file-earmark-arrow-up"></i>
+              </div>
+              <h3 class="card-title mb-3">Extract Pages</h3>
+              <p class="card-text">
+                Do you want to extract pages from a pdf file?
+              </p>
+              <a href="{% url 'pdfextract' %}" class="btn btn-warning my-3">Extract Here!</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm mx-auto">
+          <div class="card bg-secondary text-light mx-auto my-2">
+            <div class="card-body text-center">
+              <div class="h1 my-1">
+                <i class="bi bi-file-earmark-lock2"></i>
+              </div>
+              <br>
+              <h3 class="card-title my-1">PDF Encrypt</h3>
+              <p class="card-text">
+                Protect PDF file with password
+              </p>
+              <a href="{% url 'pdfencrypt' %}" class="btn btn-warning my-3">Click Here!</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm mx-auto">
+          <div class="card bg-dark text-light mx-auto my-2">
+            <div class="card-body text-center">
+              <div class="h1 my-1">
+                <i class="bi bi-unlock-fill"></i>
+              </div>
+              <br>
+              <h3 class="card-title mb-3">PDF Decrypt</h3>
+              <p class="card-text">
+                Remove password from password protected PDFs
+              </p>
+              <a href="{% url 'pdfdecrypt' %}" class="btn btn-warning my-3">Click Here!</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm mx-auto">
+          <div class="card bg-dark text-light mx-auto my-2">
+            <div class="card-body text-center">
+              <div class="h1 mb-3">
+                <i class="bi bi-droplet-half"></i>
+              </div>
+              <h3 class="card-title mb-3">PDF Watermark</h3>
+              <p class="card-text">
+                Want to watermark your pdfs?
+              </p>
+              <a href="{% url 'pdfwatermark' %}" class="btn btn-warning my-3">Watermark it!</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm mx-auto">
+          <div class="card bg-secondary text-light mx-auto my-2">
+            <div class="card-body text-center">
+              <div class="h1 mb-3">
+                <i class="bi bi-info-circle"></i>
+              </div>
+              <h3 class="card-title mb-3">PDF Info</h3>
+              <p class="card-text">
+                Do you want to get details about a pdf file?
+              </p>
+              <a href="{% url 'pdfinfo' %}" class="btn btn-warning my-3">Click Here!</a>
+            </div>
+          </div>
+        </div>
+          <div class="col-lg-4 col-md-6 col-sm mx-auto">
+            <div class="card bg-dark text-light mx-auto my-2">
+              <div class="card-body text-center">
+                <div class="h1 my-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-file-pdf" viewBox="0 0 16 16">
+                        <path d="M4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H4zm0 1h8a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1z"/>
+                        <path d="M4.603 12.087a.81.81 0 0 1-.438-.42c-.195-.388-.13-.776.08-1.102.198-.307.526-.568.897-.787a7.68 7.68 0 0 1 1.482-.645 19.701 19.701 0 0 0 1.062-2.227 7.269 7.269 0 0 1-.43-1.295c-.086-.4-.119-.796-.046-1.136.075-.354.274-.672.65-.823.192-.077.4-.12.602-.077a.7.7 0 0 1 .477.365c.088.164.12.356.127.538.007.187-.012.395-.047.614-.084.51-.27 1.134-.52 1.794a10.954 10.954 0 0 0 .98 1.686 5.753 5.753 0 0 1 1.334.05c.364.065.734.195.96.465.12.144.193.32.2.518.007.192-.047.382-.138.563a1.04 1.04 0 0 1-.354.416.856.856 0 0 1-.51.138c-.331-.014-.654-.196-.933-.417a5.716 5.716 0 0 1-.911-.95 11.642 11.642 0 0 0-1.997.406 11.311 11.311 0 0 1-1.021 1.51c-.29.35-.608.655-.926.787a.793.793 0 0 1-.58.029zm1.379-1.901c-.166.076-.32.156-.459.238-.328.194-.541.383-.647.547-.094.145-.096.25-.04.361.01.022.02.036.026.044a.27.27 0 0 0 .035-.012c.137-.056.355-.235.635-.572a8.18 8.18 0 0 0 .45-.606zm1.64-1.33a12.647 12.647 0 0 1 1.01-.193 11.666 11.666 0 0 1-.51-.858 20.741 20.741 0 0 1-.5 1.05zm2.446.45c.15.162.296.3.435.41.24.19.407.253.498.256a.107.107 0 0 0 .07-.015.307.307 0 0 0 .094-.125.436.436 0 0 0 .059-.2.095.095 0 0 0-.026-.063c-.052-.062-.2-.152-.518-.209a3.881 3.881 0 0 0-.612-.053zM8.078 5.8a6.7 6.7 0 0 0 .2-.828c.031-.188.043-.343.038-.465a.613.613 0 0 0-.032-.198.517.517 0 0 0-.145.04c-.087.035-.158.106-.196.283-.04.192-.03.469.046.822.024.111.054.227.09.346z"/>
+                      </svg>
+                </div>
+                <h3 class="card-title mb-3">Convert to PDF</h3>
+                <p class="card-text">
+                  Convert JPG, PNG or WORD files to PDF
+                </p>
+                <a href="{% url 'converttopdf' %}" class="btn btn-warning my-3">Click Here!</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm mx-auto">
+            <div class="card bg-dark text-light mx-auto my-2">
+              <div class="card-body text-center">
+                <div class="h1 my-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-file-earmark-word" viewBox="0 0 16 16">
+                        <path d="M5.485 6.879a.5.5 0 1 0-.97.242l1.5 6a.5.5 0 0 0 .967.01L8 9.402l1.018 3.73a.5.5 0 0 0 .967-.01l1.5-6a.5.5 0 0 0-.97-.242l-1.036 4.144-.997-3.655a.5.5 0 0 0-.964 0l-.997 3.655L5.485 6.88z"/>
+                        <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-file-earmark-image" viewBox="0 0 16 16">
+                        <path d="M6.502 7a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
+                        <path d="M14 14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5L14 4.5V14zM4 1a1 1 0 0 0-1 1v10l2.224-2.224a.5.5 0 0 1 .61-.075L8 11l2.157-3.02a.5.5 0 0 1 .76-.063L13 10V4.5h-2A1.5 1.5 0 0 1 9.5 3V1H4z"/>
+                    </svg>
+                </div>
+                <h3 class="card-title my-1">Convert from PDF</h3>
+                <p class="card-text">
+                  Convert PDF to JPG, PNG or WORD Document
+                </p>
+                <a href="{% url 'convertfrompdf' %}" class="btn btn-warning my-3">Click Here!</a>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </section>
+{% endblock content %}

@@ -1,0 +1,41 @@
+{% extends "pdfmanager/base.html"%}
+{% load static %}
+{% block content %}
+<section class="p-5">
+    <div class="container">
+      <div class="row text-center g-4">
+        <div class="col-md">
+          <div class="card bg-dark text-light mx-auto" id="card-merge">
+            <div class="card-body text-center">
+              <div class="h1 mb-3">
+                <i class="bi bi-file-earmark-arrow-up"></i>
+              </div>
+              <h3 class="card-title mb-3">PDF Extract</h3>
+            <form id="rotate-form-id" name="rotate-form" action="{% url 'pdfextractdownload' %}" method="POST" enctype="multipart/form-data" onsubmit="return check_checkbox()"">
+                {% csrf_token %}
+              <p class="card-text">
+                Select pages for which you want to extract.
+              </p>
+                <ul name ="checkul" class="list-group mx-auto" style="width: 50%;">
+                  <label class="list-group-item list-group-item-action mx-auto" style="text-align: left; width: 25%; background-color: #212529; color: #fff; border: none;">
+                    <input name="checkall" class="form-check-input me-1" type="checkbox" onClick="selectAll(this)" value="Select All Pages">Select All
+                  </label>
+                  {% for image in images %}
+                  <hr>
+                  <label class="list-group-item list-group-item-action mx-auto" style="text-align: left; width: 50%;">
+                    <input id="checkid" name="check" class="form-check-input me-1" type="checkbox" value="{{image}}">
+                    <img src="{{image}}" class="mx-5 m-2" style="width: 50%;" alt="test">
+                  </label>
+                  <hr>
+                  {% endfor %}
+                </ul>
+                <input type="hidden" id="ts" name="timestamp" value="{{ts}}">
+                <input id="extractid" type="submit" class="btn btn-warning align-self-end my-3" value="Extract"/>
+            </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section> 
+{% endblock content %}

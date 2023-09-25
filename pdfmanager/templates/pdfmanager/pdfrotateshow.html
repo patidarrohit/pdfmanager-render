@@ -1,0 +1,56 @@
+{% extends "pdfmanager/base.html"%}
+{% load static %}
+{% block content %}
+<section class="p-5">
+    <div class="container">
+      <div class="row text-center g-4">
+        <div class="col-md">
+          <div class="card bg-dark text-light mx-auto" id="card-merge">
+            <div class="card-body text-center">
+              <div class="h1 mb-3">
+                <i class="bi bi-arrow-clockwise"></i>
+              </div>
+              <h3 class="card-title mb-3">PDF Rotate</h3>
+            <form id="rotate-form-id" name="rotate-form" action="{% url 'pdfrotatedownload' %}" method="POST" enctype="multipart/form-data" onsubmit="return check_checkbox()">
+                {% csrf_token %}
+                <div class="mb-3">
+                  <p class="mx-2" style="display: inline-block;">Select Rotation Angle :</p>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="rotate-angle" id="inlineRadio1" value="90">
+                  <label class="form-check-label" for="inlineRadio1">90</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="rotate-angle" id="inlineRadio2" value="180">
+                  <label class="form-check-label" for="inlineRadio2">180</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="rotate-angle" id="inlineRadio3" value="270">
+                  <label class="form-check-label" for="inlineRadio3">270</label>
+                </div>
+              </div>
+              <p class="card-text">
+                Select pages for which you want to rotate.
+              </p>
+                <ul name ="checkul" class="list-group mx-auto" style="width: 50%;">
+                  <label class="list-group-item list-group-item-action mx-auto" style="text-align: left; width: 25%; background-color: #212529; color: #fff; border: none;">
+                    <input name="checkall" class="form-check-input me-1" type="checkbox" onClick="selectAll(this)" value="Select All Pages">Select All
+                  </label>
+                  {% for image in images %}
+                  <hr>
+                  <label class="list-group-item list-group-item-action mx-auto" style="text-align: left; width: 50%;">
+                    <input id="checkid" name="check" class="form-check-input me-1" type="checkbox" value="{{image}}">
+                    <img src="{{image}}" class="mx-5 m-2" style="width: 50%;" alt="test">
+                  </label>
+                  <hr>
+                  {% endfor %}
+                </ul>
+                <input type="hidden" id="ts" name="timestamp" value="{{ts}}">
+                <input id="rotateid" type="submit" class="btn btn-warning align-self-end my-3" value="Rotate"/>
+            </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section> 
+{% endblock content %}
