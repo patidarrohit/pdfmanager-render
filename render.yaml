@@ -3,7 +3,7 @@ services:
     name: mysite
     runtime: python
     buildCommand: "./build.sh"
-    startCommand: "gunicorn PDFMANAGER.wsgi:application"
+    startCommand: "gunicorn pdf_project.wsgi:application"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
