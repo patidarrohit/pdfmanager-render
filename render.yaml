@@ -1,8 +1,3 @@
-databases:
-  - name: PDFMANAGER
-    databaseName: PDFMANAGER
-    user: PDFMANAGER
-
 services:
   - type: web
     name: mysite
